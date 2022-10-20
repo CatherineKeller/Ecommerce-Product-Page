@@ -1,0 +1,12 @@
+.footer {
+  text-align: center;
+  color: $gray;
+  font-size: .7rem;
+  a {
+    color: $orange;
+
+    &:hover, &:active, &:focus {
+      color: darken($orange, 15%);
+    } 
+  }
+}

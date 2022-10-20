@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  & > .wrapper {
+    border-bottom: 1px solid $lightgray;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-left {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    display: block;
+    margin-right: 2.5rem;
+  }
+
+  // Menu
+  &__menu {
+    & ul {
+      display: flex;
+      column-gap: 1.5rem;
+      font-size: .8rem;
+    }
+    & a {
+      display: block;
+      text-decoration: none;
+      color: $gray;
+    }
+  }
+
+  // Avatar
+  &-user {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+
+    &-avatar {
+      width: 40px;      
+    }
+  }
+}

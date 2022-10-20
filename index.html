@@ -4,44 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Frontend Mentor | E-commerce product page</title>
   </head>
   <body>
     <header class="header">
-      <nav class="header__menu">
-        <ul>
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
+      <div class="wrapper">
+        <div class="header-left">
+          <a class="header__logo" href="#"><img src="images/logo.svg" alt="Sneakers"></a>
+          <nav class="header__menu">
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-user">
+          <img src="images/icon-cart.svg" alt="Cart" />
+          <img class="header-user-avatar" src="images/image-avatar.png" alt="User" />
+        </div>
+      </div>
     </header>
-    <main class="container">
-      <section class="product">
-        <header class="product__header">
-          <h2>Sneaker Company</h2>
-          <h1>Fall Limited Edition Sneakers</h1>
-        </header>
-        <p class="product__description">
-          These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
-        </p>
-        <div class="product__price">
-          <span class="product__price-valid">$125.00</span>
-          <span class="product__price-reduce">50%</span>
-          <span class="product__price-old">$250.00</span>
-        </div>
-        <div class="product__addtocart">
-          <div class="addtocart__quantity">0</div>
-          <button class="addtocart__btn">Add to cart</button>
-        </div>
-      </section>
+    <main>
+      <div class="wrapper">
+        <section class="product">
+          <div class="product__images">
+            <div class="product__image-main">
+              <img src="images/image-product-1.jpg" alt="" />
+            </div>
+            <div class="product__image-thumbs">
+              <div class="product__image-thumbs-container image-active">
+                <img class="" src="images/image-product-1-thumbnail.jpg" alt="" />
+              </div>
+              <div class="product__image-thumbs-container">
+                <img src="images/image-product-2-thumbnail.jpg" alt="" />
+              </div>
+              <div class="product__image-thumbs-container">
+                <img src="images/image-product-3-thumbnail.jpg" alt="" />
+              </div>
+              <div class="product__image-thumbs-container">
+                <img src="images/image-product-4-thumbnail.jpg" alt="" />
+              </div>
+            </div>
+
+          </div>
+          <div class="product__detail">
+            <header class="product__header">
+              <h2>Sneaker Company</h2>
+              <h1>Fall Limited Edition Sneakers</h1>
+            </header>
+            <p class="product__resume">
+              These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+            <div class="product__price">
+              <span class="product__price-valid">$125.00</span>
+              <span class="product__price-reduce">50%</span>
+              <span class="product__price-old">$250.00</span>
+            </div>
+            <div class="product__addtocart">
+              <div class="product__addtocart-quantity">
+                <span>0</span>
+              </div>
+              <button class="product__addtocart-btn">Add to cart</button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
     <footer class="footer">
-      <div class="footer__attribution">
-        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-        Coded by <a href="https://www.catherine-keller.fr" target="_blank">Catherine Keller</a>.
+      <div class="wrapper">
+        <div class="footer__attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="https://www.catherine-keller.fr" target="_blank">Catherine Keller</a>.
+        </div>
       </div>
     </footer>
   </body>

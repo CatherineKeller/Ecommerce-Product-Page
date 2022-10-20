@@ -1,0 +1,227 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header > .wrapper {
+  border-bottom: 1px solid #d6d6d6;
+  display: flex;
+  justify-content: space-between;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+}
+.header__logo {
+  display: block;
+  margin-right: 2.5rem;
+}
+.header__menu ul {
+  display: flex;
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
+  font-size: 0.8rem;
+}
+.header__menu a {
+  display: block;
+  text-decoration: none;
+  color: #919191;
+}
+.header-user {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+}
+.header-user-avatar {
+  width: 40px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+}
+.product__images, .product__detail {
+  width: 44%;
+}
+.product__image-main {
+  border-radius: 5%;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.product__image-main img {
+  width: 100%;
+  display: block;
+}
+.product__image-thumbs {
+  display: flex;
+  justify-content: space-between;
+}
+.product__image-thumbs-container {
+  width: calc(25% - 12px);
+  border-radius: 15%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.product__image-thumbs-container.image-active {
+  border: 2px solid hsl(26deg, 100%, 55%);
+}
+.product__image-thumbs-container.image-active img {
+  opacity: 0.4;
+}
+.product__image-thumbs img {
+  display: block;
+  width: 100%;
+}
+.product__detail {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.product__header {
+  margin-bottom: 1rem;
+}
+.product__header h1, .product__header h2 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+.product__header h1 {
+  font-size: 2rem;
+}
+.product__header h2 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: hsl(26deg, 100%, 55%);
+  margin-bottom: 0.5rem;
+}
+.product__resume {
+  color: #919191;
+  line-height: 1.2;
+}
+.product__price {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+.product__price-valid {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.product__price-reduce {
+  padding: 3px 7px;
+  background-color: hsl(25deg, 100%, 94%);
+  border-radius: 5px;
+  color: hsl(26deg, 100%, 55%);
+  font-size: 0.9rem;
+}
+.product__price-old {
+  display: block;
+  margin-top: 1rem;
+  color: #919191;
+  text-decoration: line-through;
+}
+.product__addtocart {
+  display: flex;
+  -moz-column-gap: 0.7rem;
+       column-gap: 0.7rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}
+.product__addtocart-quantity, .product__addtocart-btn {
+  border-radius: 0.5rem;
+}
+.product__addtocart-quantity {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 1rem;
+}
+.product__addtocart-btn {
+  flex-grow: 1;
+  background-color: hsl(26deg, 100%, 55%);
+  border: 0;
+  color: white;
+  font-weight: 700;
+  transition: 0.5s background;
+}
+.product__addtocart-btn:hover {
+  background-color: #e66300;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  color: #919191;
+  font-size: 0.7rem;
+}
+.footer a {
+  color: hsl(26deg, 100%, 55%);
+}
+.footer a:hover, .footer a:active, .footer a:focus {
+  color: #cc5800;
+}/*# sourceMappingURL=style.css.map */

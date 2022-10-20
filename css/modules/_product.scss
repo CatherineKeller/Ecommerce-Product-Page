@@ -1,0 +1,131 @@
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  &__images,
+  &__detail {
+    width: 44%;
+  }
+
+  // ***** Images
+  &__image-main {
+    border-radius: 5%;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+
+    & img {
+      width: 100%;
+      display: block;
+    }
+  }
+  &__image-thumbs {
+    display: flex;
+    justify-content: space-between;
+
+    &-container {
+      width: calc(100% / 4 - 12px);
+      border-radius: 15%;
+      overflow: hidden;
+      box-sizing: border-box;
+      &.image-active {
+        border: 2px solid $orange;
+        & img {
+          opacity: .4;
+        }
+      }
+    }
+    
+    & img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  // ***** Detail
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+
+  // ***** Titles
+  &__header {
+    margin-bottom: 1rem;
+    & h1,
+    & h2 {
+      font-weight: 700;
+      line-height: 1.1;
+    }
+    & h1 {
+      font-size: 2rem;
+    }
+    & h2 {
+      font-size: .8rem;
+      text-transform: uppercase;
+      color: $orange;
+      margin-bottom: .5rem;
+    }
+  }
+
+  // ***** Resume
+  &__resume {
+    color: $gray;
+    line-height: 1.2;
+  }
+
+  // ***** Price
+  &__price {
+    margin-top: .5rem;
+    font-weight: 700;
+
+    &-valid {
+      font-size: 1.5rem;
+      margin-right: .5rem;
+    }
+    &-reduce {
+      padding: 3px 7px;
+      background-color: $orange-pale;
+      border-radius: 5px;
+      color: $orange;
+      font-size: .9rem;
+    }
+    &-old {
+      display: block;
+      margin-top: 1rem;
+      color: $gray;
+      text-decoration: line-through;
+    }
+  }
+
+  // ***** Add to cart
+  &__addtocart {
+    display: flex;
+    column-gap: .7rem;
+    font-weight: 700;
+    margin-top: 1rem;
+
+    &-quantity,
+    &-btn {
+      border-radius: .5rem;
+    }
+    &-quantity {
+      background-color: lighten($lightgray,10%);
+      text-align: center;
+      padding: 1rem;
+    }
+    &-btn {
+      flex-grow: 1;
+      background-color: $orange;
+      border: 0;
+      color: white;
+      font-weight: 700;
+      transition: .5s background;
+      &:hover {
+        background-color: darken($orange,10%);
+        cursor: pointer;
+      }
+    }
+  }
+}
