@@ -115,19 +115,34 @@
       text-align: center;
       display: flex;
       align-items: stretch;
+      
       &-btn, &-number {
         padding: 0 1rem;
         display: flex;
         align-items: center;
+        justify-content: center;
       }
       &-btn {
+        user-select: none;
         &:hover {
           cursor: pointer;
           background-color: $orange-pale;
         }
       }
+      &-number {
+        min-width: 25px;
+      }
       &-minus {
         border-radius: .5rem 0 0 .5rem;
+        &.inactive {
+          &:hover {
+            cursor: initial;
+            background-color: transparent;
+          }
+          &.inactive img {
+            opacity: .5;
+          }
+        }
       }
       &-plus {
         border-radius: 0 .5rem .5rem 0;
@@ -135,6 +150,10 @@
     }
     &-btn {
       flex-grow: 1;
+      &:disabled {
+        background-color: $lightgray;
+        cursor: initial;
+      }
     }
   }
 }

@@ -27,6 +27,12 @@
     font-size: .9rem;
     border-bottom: 1px solid $lightgray;
   }
+  &__content {
+    & > p {
+      padding: 2rem 0;
+      text-align: center;
+    }
+  }
   &__checkout {
     margin: .5rem 1rem 1rem 1rem;
     width: calc(100% - 2rem);
@@ -59,6 +65,8 @@
       margin-bottom: .4rem;
     }
     &-price {
+      display: flex;
+      column-gap: .3rem;
       &-total {
         font-weight: 700;
       }

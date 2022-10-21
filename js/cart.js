@@ -1,17 +1,26 @@
+const product = {
+  id: 0,
+  title: 'Fall Limited Edition Sneakers',
+  devise: '$',
+  price: 125.00,
+  image: 'images/image-product-1.jpg',
+};
 const cart = {
+  emptyCart: function(){
+    cart.itemsContainer.innerHTML = '<p>Your cart ist empty.</p>';
+    cart.checkoutBtn.style.display = 'none';
+  },
   show: function(){
     cart.content.classList.add('cart-active');
   },
   hide: function(){
     cart.content.classList.remove('cart-active');
   },
-  removeItem: function(event){
-    const item = event.target.parentNode.parentNode;
-    item.remove();
-  },
   init: function(){
     cart.btn = document.getElementById('cart'); // Cart button
     cart.content = document.querySelector('.cart-opened'); // Cart Content
+    cart.itemsContainer = document.querySelector('.cart-opened__content'); // Cart items Container
+    cart.checkoutBtn = document.querySelector('.cart-opened__checkout'); // Button Checkout in Cart items Container
 
     // On cart icon
     cart.btn.addEventListener('mouseover', cart.show);
@@ -20,9 +29,8 @@ const cart = {
     cart.btn.addEventListener('mouseout', cart.hide);
     cart.content.addEventListener('mouseout', cart.hide);
 
-    // Item delete button
-    cart.btnDelete = document.querySelector('.cart-item__remove');
-    cart.btnDelete.addEventListener('click', cart.removeItem);
+    // Init empty cart
+    cart.emptyCart();
   },
 };
 document.addEventListener('DOMContentLoaded', cart.init);
