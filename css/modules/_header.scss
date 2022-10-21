@@ -34,8 +34,9 @@
   // Avatar
   &-user {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     column-gap: 2rem;
+    position: relative;
 
     &-avatar {
       width: 40px;      

@@ -113,19 +113,28 @@
     &-quantity {
       background-color: lighten($lightgray,10%);
       text-align: center;
-      padding: 1rem;
+      display: flex;
+      align-items: stretch;
+      &-btn, &-number {
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+      }
+      &-btn {
+        &:hover {
+          cursor: pointer;
+          background-color: $orange-pale;
+        }
+      }
+      &-minus {
+        border-radius: .5rem 0 0 .5rem;
+      }
+      &-plus {
+        border-radius: 0 .5rem .5rem 0;
+      }
     }
     &-btn {
       flex-grow: 1;
-      background-color: $orange;
-      border: 0;
-      color: white;
-      font-weight: 700;
-      transition: .5s background;
-      &:hover {
-        background-color: darken($orange,10%);
-        cursor: pointer;
-      }
     }
   }
 }

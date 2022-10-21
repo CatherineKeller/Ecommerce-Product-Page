@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Frontend Mentor | E-commerce product page</title>
     <script src="js/images-thumb.js"></script>
+    <script src="js/cart.js"></script>
   </head>
   <body>
     <header class="header">
@@ -27,8 +28,34 @@
           </nav>
         </div>
         <div class="header-user">
-          <img src="images/icon-cart.svg" alt="Cart" />
+          <div id="cart" class="cart-btn-container">
+            <img src="images/icon-cart.svg" alt="Cart" />
+          </div>
           <img class="header-user-avatar" src="images/image-avatar.png" alt="User" />
+          <div class="cart-opened">
+            <div class="cart-opened__header">
+              <div class="cart-opened__header-title">
+                Cart
+              </div>
+            </div>
+            <div class="cart-opened__content">
+              <div class="cart-item" data-product="">
+                <img class="cart-item__img" src="images/image-product-1-thumbnail.jpg" />
+                <div class="cart-item__descr">
+                  <div class="cart-item__descr-title">
+                    Fall Limited Edition Sneakers
+                  </div>
+                  <div class="cart-item__descr-price">
+                    <span class="cart-item__descr-price-unique">$125.00</span>
+                    <span class="cart-item__descr-price-qty">x 3</span>
+                    <span class="cart-item__descr-price-total">$375.00</span>
+                  </div>
+                </div>
+                <span class="cart-item__remove"><img src="images/icon-delete.svg" alt="Delete" /></span>
+              </div>
+            </div>
+            <button class="cart-opened__checkout btn--main">Checkout</button>
+          </div>
         </div>
       </div>
     </header>
@@ -70,9 +97,17 @@
             </div>
             <div class="product__addtocart">
               <div class="product__addtocart-quantity">
-                <span>0</span>
+                <span id="product-qnt-minus" class="product__addtocart-quantity-btn product__addtocart-quantity-minus">
+                  <img src="images/icon-minus.svg" />
+                </span>
+                <span class="product__addtocart-quantity-number">
+                  <span>0</span>
+                </span>
+                <span id="product-qnt-plus" class="product__addtocart-quantity-btn product__addtocart-quantity-plus">
+                  <img src="images/icon-plus.svg" />
+                </span>
               </div>
-              <button class="product__addtocart-btn">Add to cart</button>
+              <button class="product__addtocart-btn btn--main">Add to cart</button>
             </div>
           </div>
         </section>

@@ -1,0 +1,13 @@
+.btn--main {
+  background-color: $orange;
+  border: 0;
+  color: white;
+  font-weight: 700;
+  padding: 1rem;
+  border-radius: .5rem;
+  transition: .5s background;
+  &:hover {
+    background-color: darken($orange,10%);
+    cursor: pointer;
+  }
+}
