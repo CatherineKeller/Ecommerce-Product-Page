@@ -1,10 +1,3 @@
-const product = {
-  id: 0,
-  title: 'Fall Limited Edition Sneakers',
-  devise: '$',
-  price: 125.00,
-  image: 'images/image-product-1.jpg',
-};
 const cart = {
   emptyCart: function(){
     cart.itemsContainer.innerHTML = '<p>Your cart ist empty.</p>';

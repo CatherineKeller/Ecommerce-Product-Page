@@ -76,11 +76,19 @@ const addtocart = {
   },
   addItem: function(){
     addtocart.createItem.container.dataset.product = product.id;
-    addtocart.createItem.img.src = product.image;
+    addtocart.createItem.img.src = product.image[0];
     addtocart.createItem.title.textContent = product.title;
-    addtocart.createItem.price.textContent = `${product.devise}${product.price}`;
+    // Calcul new price
+    let productPrice = '';
+    if(product.reduce !== 0 || ''){
+      productPrice = product.price * product.reduce / 100;
+    } else {
+      console.log('else');
+      productPrice = product.price;
+    }
+    addtocart.createItem.price.textContent = `${product.devise}${productPrice}`;
     addtocart.createItem.qty.textContent = `x ${addtocart.currentQty}`;
-    addtocart.createItem.total.textContent = product.devise + product.price * addtocart.currentQty;
+    addtocart.createItem.total.textContent = product.devise + productPrice * addtocart.currentQty;
 
     addtocart.currentItemsInCartNumber++;
   },
