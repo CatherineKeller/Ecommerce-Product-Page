@@ -6,24 +6,77 @@
     border-bottom: 1px solid $lightgray;
     display: flex;
     justify-content: space-between;
+
+    @include for-phone-only {
+      padding: 1rem;
+    }
   }
 
   &-left {
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
+    @include for-tablet-landscape-up {
+      flex-direction: row;
+    }
   }
   &__logo {
     display: block;
-    margin-right: 2.5rem;
+    @include for-tablet-landscape-up {
+      margin-right: 2.5rem;
+    }
   }
 
   // Menu
   &__menu {
-    & ul {
-      display: flex;
-      column-gap: 1.5rem;
-      font-size: .8rem;
+    pointer-events: none; // Disable click on menu
+    &:before {
+      content: url(../images/icon-menu.svg);
+      display: inline-block;
+      padding: 0.5rem;
+      margin-top: 3px;
+      margin-right: 0.5rem;
+      pointer-events: all; // Enable click on menu
+
+      @include for-tablet-landscape-up {
+        display: none;
+      }
     }
+    & ul {
+      display: none;
+      
+      @include for-tablet-landscape-up {
+        display: flex;
+        column-gap: 1.5rem;
+        font-size: .8rem;
+      }
+    }
+
+    // Menu mobile
+    &.menu-active {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 80%;
+      background-color: white;
+      z-index: 10;
+
+      &:before {
+        content: url(../images/icon-close.svg);
+        padding: 1rem;
+      }
+
+      & ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.5rem;
+        padding: 1rem;
+        font-weight: 700;
+        color: #666666;
+      }
+    }
+
     & a {
       display: block;
       text-decoration: none;
@@ -34,9 +87,14 @@
   // Avatar
   &-user {
     display: flex;
-    align-items: stretch;
-    column-gap: 2rem;
+    align-items: center;
+    column-gap: 1rem;
     position: relative;
+
+    @include for-tablet-landscape-up {
+      align-items: stretch;
+      column-gap: 2rem;
+    }
 
     &-avatar {
       width: 40px;      

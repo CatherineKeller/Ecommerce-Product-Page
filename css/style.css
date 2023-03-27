@@ -56,15 +56,23 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+/* Breakpoints */
 .wrapper {
-  width: 80%;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+}
+@media (min-width: 900px) {
+  .wrapper {
+    width: 80%;
+    padding: 2rem 0;
+  }
 }
 
 .btn--main {
-  background-color: hsl(26deg, 100%, 55%);
+  background-color: hsl(26, 100%, 55%);
   border: 0;
   color: white;
   font-weight: 700;
@@ -86,19 +94,76 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 599px) {
+  .header > .wrapper {
+    padding: 1rem;
+  }
+}
 .header-left {
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
+}
+@media (min-width: 900px) {
+  .header-left {
+    flex-direction: row;
+  }
 }
 .header__logo {
   display: block;
-  margin-right: 2.5rem;
+}
+@media (min-width: 900px) {
+  .header__logo {
+    margin-right: 2.5rem;
+  }
+}
+.header__menu {
+  pointer-events: none;
+}
+.header__menu:before {
+  content: url(../images/icon-menu.svg);
+  display: inline-block;
+  padding: 0.5rem;
+  margin-top: 3px;
+  margin-right: 0.5rem;
+  pointer-events: all;
+}
+@media (min-width: 900px) {
+  .header__menu:before {
+    display: none;
+  }
 }
 .header__menu ul {
+  display: none;
+}
+@media (min-width: 900px) {
+  .header__menu ul {
+    display: flex;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+.header__menu.menu-active {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  background-color: white;
+  z-index: 10;
+}
+.header__menu.menu-active:before {
+  content: url(../images/icon-close.svg);
+  padding: 1rem;
+}
+.header__menu.menu-active ul {
   display: flex;
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
-  font-size: 0.8rem;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding: 1rem;
+  font-weight: 700;
+  color: #666666;
 }
 .header__menu a {
   display: block;
@@ -107,10 +172,17 @@ body {
 }
 .header-user {
   display: flex;
-  align-items: stretch;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
   position: relative;
+}
+@media (min-width: 900px) {
+  .header-user {
+    align-items: stretch;
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
 }
 .header-user-avatar {
   width: 40px;
@@ -120,11 +192,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
   margin: 0 auto;
+  flex-direction: column-reverse;
+  row-gap: 1rem;
 }
-.product__images, .product__detail {
-  width: 44%;
+@media (min-width: 900px) {
+  .product {
+    flex-direction: row;
+    width: 95%;
+  }
+  .product__images, .product__detail {
+    width: 44%;
+  }
 }
 .product__image-main {
   border-radius: 5%;
@@ -146,7 +225,7 @@ body {
   box-sizing: border-box;
 }
 .product__image-thumbs-container.image-active {
-  border: 2px solid hsl(26deg, 100%, 55%);
+  border: 2px solid hsl(26, 100%, 55%);
 }
 .product__image-thumbs-container.image-active img {
   opacity: 0.4;
@@ -173,7 +252,7 @@ body {
 .product__header h2 {
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: hsl(26deg, 100%, 55%);
+  color: hsl(26, 100%, 55%);
   margin-bottom: 0.5rem;
 }
 .product__resume {
@@ -190,9 +269,9 @@ body {
 }
 .product__price-reduce {
   padding: 3px 7px;
-  background-color: hsl(25deg, 100%, 94%);
+  background-color: hsl(25, 100%, 94%);
   border-radius: 5px;
-  color: hsl(26deg, 100%, 55%);
+  color: hsl(26, 100%, 55%);
   font-size: 0.9rem;
 }
 .product__price-old {
@@ -226,12 +305,11 @@ body {
 .product__addtocart-quantity-btn {
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 .product__addtocart-quantity-btn:hover {
   cursor: pointer;
-  background-color: hsl(25deg, 100%, 94%);
+  background-color: hsl(25, 100%, 94%);
 }
 .product__addtocart-quantity-number {
   min-width: 25px;
@@ -328,7 +406,7 @@ body {
   font-size: 0.7rem;
 }
 .footer a {
-  color: hsl(26deg, 100%, 55%);
+  color: hsl(26, 100%, 55%);
 }
 .footer a:hover, .footer a:active, .footer a:focus {
   color: #cc5800;

@@ -2,12 +2,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
   margin: 0 auto;
-  &__images,
-  &__detail {
-    width: 44%;
+
+  flex-direction: column-reverse;
+  row-gap: 1rem;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    width: 95%;
+    &__images,
+    &__detail {
+      width: 44%;
+    }
   }
+
+
 
   // ***** Images
   &__image-main {
