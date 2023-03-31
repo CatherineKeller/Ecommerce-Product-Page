@@ -1,28 +1,25 @@
 const addtocart = {
   currentItemsInCartNumber: 0,
+  currentQty: 0,
   qtyPlus: function(){
-    const newQty = addtocart.currentQty + 1;
-    addtocart.currentQtyElmt.textContent = newQty;
     addtocart.currentQty++;
+    addtocart.currentQtyElmt.textContent = addtocart.currentQty;
     if(addtocart.currentQty > 0){
       addtocart.btnMinus.classList.remove('inactive');
-    }
-    if(parseInt(addtocart.currentQtyElmt.textContent) > 0){
       addtocart.addBtn.disabled = false;
     }
+    console.log("plus");
   },
   qtyMinus: function(){
     if(addtocart.currentQty > 0){
-      const newQty = addtocart.currentQty - 1;
-      addtocart.currentQtyElmt.textContent = newQty;
       addtocart.currentQty--;
+      addtocart.currentQtyElmt.textContent = addtocart.currentQty;
       if(addtocart.currentQty === 0){
         addtocart.btnMinus.classList.add('inactive');
-      }
-      if(parseInt(addtocart.currentQtyElmt.textContent) === 0){
         addtocart.addBtn.disabled = true;
       }
     }
+    console.log("minus");
   },
   createItem: function(){
     // cart item container
@@ -104,21 +101,21 @@ const addtocart = {
     }
   },
   init: function(){
+    // Elements
     addtocart.addBtn = document.querySelector('.product__addtocart-btn'); // Button "Add to cart"
-
-    // Update quantity : minus & plus
     addtocart.currentQtyElmt = document.querySelector('.product__addtocart-quantity-number'); // Quantité container
-    addtocart.currentQty = parseInt(addtocart.currentQtyElmt.textContent); // Quantité affichée
     addtocart.btnMinus = document.getElementById('product-qnt-minus'); // Button minus
     addtocart.btnPlus = document.getElementById('product-qnt-plus'); // Button plus
+    
+    // Event Listeners : btn plus & minus
     addtocart.btnMinus.addEventListener('click', addtocart.qtyMinus); // On click Button minus
     addtocart.btnPlus.addEventListener('click', addtocart.qtyPlus); // On click Button plus
 
-    // Init color btnMius
+    // Init btnMinus & addtocart
     addtocart.btnMinus.classList.add('inactive');
-    if(parseInt(addtocart.currentQtyElmt.textContent) === 0){
-      addtocart.addBtn.disabled = true;
-    }
+    addtocart.addBtn.disabled = true;
+    // Init the displayed quantity
+    addtocart.currentQtyElmt.textContent = addtocart.currentQty;
 
     addtocart.cartItemsContainer = document.querySelector('.cart-opened__content');
     addtocart.addBtn.addEventListener('click', function() {
