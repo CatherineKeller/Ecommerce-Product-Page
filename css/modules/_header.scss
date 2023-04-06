@@ -30,7 +30,7 @@
   // Menu
   &__menu {
     pointer-events: none; // Disable click on menu
-    &:before {
+    &::before {
       content: url(../images/icon-menu.svg);
       display: inline-block;
       padding: 0.5rem;
@@ -60,9 +60,9 @@
       left: 0;
       width: 80%;
       background-color: white;
-      z-index: 10;
+      z-index: 20;
 
-      &:before {
+      &::before {
         content: url(../images/icon-close.svg);
         padding: 1rem;
       }

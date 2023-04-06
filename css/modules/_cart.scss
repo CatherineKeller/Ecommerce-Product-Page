@@ -17,6 +17,11 @@
   background-color: lighten($lightgray,15%);
   box-shadow: 5px 10px 15px rgba(#666666,0.2);
 
+  @include for-phone-only {
+    top: 4rem;
+    width: calc(100vw - 2rem);
+  }
+
   &__header-title,
   &__content,
   &__checkout {

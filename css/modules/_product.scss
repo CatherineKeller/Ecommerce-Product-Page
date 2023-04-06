@@ -16,8 +16,6 @@
     }
   }
 
-
-
   // ***** Images
   &__image-main {
     border-radius: 5%;
@@ -86,6 +84,10 @@
 
   // ***** Price
   &__price {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    align-items: center;
     margin-top: .5rem;
     font-weight: 700;
 
@@ -102,9 +104,16 @@
     }
     &-old {
       display: block;
-      margin-top: 1rem;
       color: $gray;
       text-decoration: line-through;
+      
+      @include for-phone-only {
+        text-align: right;
+        flex-grow: 1;
+      }
+      @include for-tablet-portrait-up {
+        width: 100%;
+      }
     }
   }
 
@@ -112,18 +121,25 @@
   &__addtocart {
     display: flex;
     column-gap: .7rem;
+    row-gap: .7rem;
     font-weight: 700;
     margin-top: 1rem;
+    flex-wrap: wrap;
 
     &-quantity,
     &-btn {
       border-radius: .5rem;
+      @include for-phone-only {
+        width: 100%;
+      }
     }
     &-quantity {
       background-color: lighten($lightgray,10%);
       text-align: center;
       display: flex;
       align-items: stretch;
+      justify-content: space-between;
+      padding: 1rem;
       
       &-btn, &-number {
         padding: 0 1rem;
@@ -133,6 +149,7 @@
       }
       &-btn {
         user-select: none;
+
         &:hover {
           cursor: pointer;
           background-color: $orange-pale;
@@ -160,6 +177,7 @@
     }
     &-btn {
       flex-grow: 1;
+
       &:disabled {
         background-color: $lightgray;
         cursor: initial;
