@@ -1,9 +1,33 @@
 body {
   font-family: 'Kumbh Sans', sans-serif;
 }
+
+/* Breakpoints */
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+// @mixin for-big-desktop-up {
+//   @media (min-width: 1800px) { @content; }
+// }
+
 .wrapper {
-  width: 80%;
+  width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+
+  @include for-tablet-landscape-up {
+    width: 80%;
+    padding: 2rem 0;
+  }
 }

@@ -2,11 +2,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 95%;
   margin: 0 auto;
-  &__images,
-  &__detail {
-    width: 44%;
+
+  flex-direction: column-reverse;
+  row-gap: 1rem;
+
+  @include for-tablet-landscape-up {
+    flex-direction: row;
+    width: 95%;
+    &__images,
+    &__detail {
+      width: 44%;
+    }
   }
 
   // ***** Images
@@ -77,6 +84,10 @@
 
   // ***** Price
   &__price {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    align-items: center;
     margin-top: .5rem;
     font-weight: 700;
 
@@ -93,9 +104,16 @@
     }
     &-old {
       display: block;
-      margin-top: 1rem;
       color: $gray;
       text-decoration: line-through;
+      
+      @include for-phone-only {
+        text-align: right;
+        flex-grow: 1;
+      }
+      @include for-tablet-portrait-up {
+        width: 100%;
+      }
     }
   }
 
@@ -103,18 +121,25 @@
   &__addtocart {
     display: flex;
     column-gap: .7rem;
+    row-gap: .7rem;
     font-weight: 700;
     margin-top: 1rem;
+    flex-wrap: wrap;
 
     &-quantity,
     &-btn {
       border-radius: .5rem;
+      @include for-phone-only {
+        width: 100%;
+      }
     }
     &-quantity {
       background-color: lighten($lightgray,10%);
       text-align: center;
       display: flex;
       align-items: stretch;
+      justify-content: space-between;
+      padding: 1rem;
       
       &-btn, &-number {
         padding: 0 1rem;
@@ -124,6 +149,7 @@
       }
       &-btn {
         user-select: none;
+
         &:hover {
           cursor: pointer;
           background-color: $orange-pale;
@@ -135,6 +161,7 @@
       &-minus {
         border-radius: .5rem 0 0 .5rem;
         &.inactive {
+          pointer-events:none;
           &:hover {
             cursor: initial;
             background-color: transparent;
@@ -150,6 +177,7 @@
     }
     &-btn {
       flex-grow: 1;
+
       &:disabled {
         background-color: $lightgray;
         cursor: initial;
